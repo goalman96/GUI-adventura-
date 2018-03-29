@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+import com.github.goalman96.adventura.logika.Predmet;
+
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
  *
@@ -28,6 +30,8 @@ public class Prostor {
     private String popis;
     private Set<Prostor> vychody;   // obsahuje sousední místnosti
     private List<Predmet> predmety;
+    private double x;
+    private double y;
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyně", "hala", "trávník
      * před domem"
@@ -35,12 +39,16 @@ public class Prostor {
      * @param nazev nazev prostoru, jednoznačný identifikátor, jedno slovo nebo
      * víceslovný název bez mezer.
      * @param popis Popis prostoru.
+     * @param x 
+     * @param y 
      */
-    public Prostor(String nazev, String popis) {
+    public Prostor(String nazev, String popis, double x, double y) {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
         predmety = new ArrayList<Predmet>();
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -238,4 +246,28 @@ public class Prostor {
     public void pridejPredmet(Predmet predmet) {
         predmety.add(predmet);
     }
+    
+    /**
+     * metoda vrací seznam věcí v místnosti
+     * @return kolekce věcí
+     */
+    public Collection<Predmet> getPredmety() {
+    	return Collections.unmodifiableCollection(predmety);
+    }
+    
+    public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
 }

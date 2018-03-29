@@ -1,6 +1,6 @@
 package com.github.goalman96.adventura.logika;
 
-
+import java.util.Observable;
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -14,7 +14,7 @@ package com.github.goalman96.adventura.logika;
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Tibor Vondrasek
  *@version    29.12.2017
  */
-public class HerniPlan {
+public class HerniPlan extends Observable {
     
     private Prostor aktualniProstor;
     private Batoh batoh;
@@ -51,20 +51,20 @@ public class HerniPlan {
      */
     private void zalozProstoryHry() {
         // vytvářejí se jednotlivé prostory
-        kuchyne = new Prostor("kuchyne","kuchyně, kde si uvaříš večeři");
-        loznice = new Prostor("loznice", "ložnice, kde asi spíš");
-        obyvak = new Prostor("obyvak","obývák, máš tu bordel");
-        garaz = new Prostor("garaz","garáž, kde máš auto");
-        Prostor auto = new Prostor("auto","auto, kterým můžeš jet do Tesca");
-        parkoviste = new Prostor("parkoviste","parkoviště u Tesca");
-        vchod = new Prostor("vchod","vchod do Tesca");
-        pokladny = new Prostor("pokladny","pokladny, kde musíš zaplatit nákup");
-        akcniZbozi = new Prostor("akcniZbozi","akční zboží,kde je zboží v akci");
-        ovoceZelenina = new Prostor("ovoceZelenina","ovoce a zelenina, je to zdravé, takže to nechceš");
-        lusteniny = new Prostor("lusteniny","luštěniny... někdo to jí");
-        koreni = new Prostor("koreni","koření, kterým si můžeš okořenit jídlo");
-        piti = new Prostor("piti","pití, kde jsou minerálky, limonády, piva, vodky a tak");
-        chlazeneZbozi= new Prostor("chlazeneZbozi","chlazené zboží, které je stejné jako ostatní, akorát je chlazené...");
+        kuchyne = new Prostor("kuchyne","kuchyně, kde si uvaříš večeři", 97.0, 87.0);
+        loznice = new Prostor("loznice", "ložnice, kde asi spíš", 97.0, 46.0);
+        obyvak = new Prostor("obyvak","obývák, máš tu bordel", 167.0, 45.0);
+        garaz = new Prostor("garaz","garáž, kde máš auto", 123.0, 101.0);
+        Prostor auto = new Prostor("auto","auto, kterým můžeš jet do Tesca", 150.0, 107.0);
+        parkoviste = new Prostor("parkoviste","parkoviště u Tesca", 160.0, 341.0);
+        vchod = new Prostor("vchod","vchod do Tesca", 195.0, 296.0);
+        pokladny = new Prostor("pokladny","pokladny, kde musíš zaplatit nákup", 118.0, 295.0);
+        akcniZbozi = new Prostor("akcniZbozi","akční zboží,kde je zboží v akci", 157.0, 248.0);
+        ovoceZelenina = new Prostor("ovoceZelenina","ovoce a zelenina, je to zdravé, takže to nechceš", 197.0, 225.0);
+        lusteniny = new Prostor("lusteniny","luštěniny... někdo to jí", 150.0, 225.0);
+        koreni = new Prostor("koreni","koření, kterým si můžeš okořenit jídlo", 107.0, 225.0);
+        piti = new Prostor("piti","pití, kde jsou minerálky, limonády, piva, vodky a tak", 70.0, 225.0);
+        chlazeneZbozi= new Prostor("chlazeneZbozi","chlazené zboží, které je stejné jako ostatní, akorát je chlazené...", 167.0, 177.0);
         
         kuchyne.setVychod(loznice, garaz);
         loznice.setVychod(kuchyne, obyvak);
@@ -163,6 +163,8 @@ public class HerniPlan {
      */
     public void setAktualniProstor(Prostor prostor) {
        aktualniProstor = prostor;
+       setChanged();
+       notifyObservers();
     }
     
     /**
