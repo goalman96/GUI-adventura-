@@ -47,7 +47,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<mainClass>
-				com.github.goalman96.adventura.main.Start</mainClass>
+				com.github.goalman96.adventura.ui.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

@@ -270,4 +270,10 @@ public class Prostor {
 	public void setY(double y) {
 		this.y = y;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getNazev();
+	}
 }

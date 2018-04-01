@@ -105,4 +105,10 @@ public class Batoh
         }
         return vracenyText;
     }
+
+    public List<Predmet> getBatoh() {
+        return batoh;
+    }
+    
+    
 }

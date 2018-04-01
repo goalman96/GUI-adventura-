@@ -1,5 +1,8 @@
 package com.github.goalman96.adventura.logika;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 /**
  *  Třída PrikazNapoveda implementuje pro hru příkaz napoveda.
  *  Tato třída je součástí jednoduché textové hry.
@@ -31,12 +34,30 @@ public class PrikazNapoveda implements IPrikaz {
      *  
      *  @return napoveda ke hre
      */
-    public String provedPrikaz(String... parametry) {
+    /*public String provedPrikaz(String... parametry) {
         return "Tvým úkolem je koupit si v Tescu suroviny na palačinky\n"
-        + "a doma v kuchyni si uvařit palačinky, na které potřebuuješ.\n"
+        + "a doma v kuchyni si uvařit palačinky, na které potřebuješ\n"
         + "vejce, mléko, hladkou mouku a sůl. Nezapomeň v Tescu zaplatit.\n"
         + "Můžeš zadat tyto příkazy:\n"
         + platnePrikazy.vratNazvyPrikazu()+".\n";
+    }*/
+    
+    public String provedPrikaz(String... parametry) {
+    	String napoveda = "";
+    	try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\tiboy\\Desktop\\SWI\\adventura\\src\\main\\java\\com\\github\\goalman96\\adventura\\logika\\napoveda.html")))
+    	{
+    	        String s;
+    	        while ((s = br.readLine()) != null)
+    	        {
+    	                napoveda += s;
+    	        }
+    	}
+    	catch (Exception e)
+    	{
+    	        System.err.println("Chyba při četení ze souboru.");
+    	}
+    	
+    	return napoveda;
     }
     
      /**

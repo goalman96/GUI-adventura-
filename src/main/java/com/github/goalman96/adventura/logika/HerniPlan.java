@@ -51,20 +51,20 @@ public class HerniPlan extends Observable {
      */
     private void zalozProstoryHry() {
         // vytvářejí se jednotlivé prostory
-        kuchyne = new Prostor("kuchyne","kuchyně, kde si uvaříš večeři", 97.0, 87.0);
-        loznice = new Prostor("loznice", "ložnice, kde asi spíš", 97.0, 46.0);
-        obyvak = new Prostor("obyvak","obývák, máš tu bordel", 167.0, 45.0);
-        garaz = new Prostor("garaz","garáž, kde máš auto", 123.0, 101.0);
-        Prostor auto = new Prostor("auto","auto, kterým můžeš jet do Tesca", 150.0, 107.0);
-        parkoviste = new Prostor("parkoviste","parkoviště u Tesca", 160.0, 341.0);
-        vchod = new Prostor("vchod","vchod do Tesca", 195.0, 296.0);
-        pokladny = new Prostor("pokladny","pokladny, kde musíš zaplatit nákup", 118.0, 295.0);
-        akcniZbozi = new Prostor("akcniZbozi","akční zboží,kde je zboží v akci", 157.0, 248.0);
-        ovoceZelenina = new Prostor("ovoceZelenina","ovoce a zelenina, je to zdravé, takže to nechceš", 197.0, 225.0);
-        lusteniny = new Prostor("lusteniny","luštěniny... někdo to jí", 150.0, 225.0);
-        koreni = new Prostor("koreni","koření, kterým si můžeš okořenit jídlo", 107.0, 225.0);
-        piti = new Prostor("piti","pití, kde jsou minerálky, limonády, piva, vodky a tak", 70.0, 225.0);
-        chlazeneZbozi= new Prostor("chlazeneZbozi","chlazené zboží, které je stejné jako ostatní, akorát je chlazené...", 167.0, 177.0);
+        kuchyne = new Prostor("kuchyne","kuchyně, kde si uvaříš večeři",30,80);
+        loznice = new Prostor("loznice", "ložnice, kde asi spíš",30,10);
+        obyvak = new Prostor("obyvak","obývák, máš tu bordel",110,10);
+        garaz = new Prostor("garaz","garáž, kde máš auto",0,0);
+        Prostor auto = new Prostor("auto","auto, kterým můžeš jet do Tesca",0,0);
+        parkoviste = new Prostor("parkoviste","parkoviště u Tesca",0,0);
+        vchod = new Prostor("vchod","vchod do Tesca",0,0);
+        pokladny = new Prostor("pokladny","pokladny, kde musíš zaplatit nákup",0,0);
+        akcniZbozi = new Prostor("akcniZbozi","akční zboží,kde je zboží v akci",0,0);
+        ovoceZelenina = new Prostor("ovoceZelenina","ovoce a zelenina, je to zdravé, takže to nechceš",0,0);
+        lusteniny = new Prostor("lusteniny","luštěniny... někdo to jí",0,0);
+        koreni = new Prostor("koreni","koření, kterým si můžeš okořenit jídlo",0,0);
+        piti = new Prostor("piti","pití, kde jsou minerálky, limonády, piva, vodky a tak",0,0);
+        chlazeneZbozi= new Prostor("chlazeneZbozi","chlazené zboží, které je stejné jako ostatní, akorát je chlazené...",0,0);
         
         kuchyne.setVychod(loznice, garaz);
         loznice.setVychod(kuchyne, obyvak);
@@ -94,41 +94,41 @@ public class HerniPlan extends Observable {
      *  Přiřazuje předměty prostorům.
      */
     private void zalozPredmety() {
-        Predmet hrnec = new Predmet("hrnec",false);
-        Predmet sporak = new Predmet("sporak",false);
-        Predmet klice = new Predmet("klice",true);
-        Predmet penezenka = new Predmet("penezenka",true);
-        Predmet postel = new Predmet("postel",false);
-        Predmet gauc = new Predmet("gauc",false);
-        Predmet televize = new Predmet("televize",false);
-        Predmet pneumatika = new Predmet("pneumatika",false);
-        Predmet autoHonda= new Predmet("autoHonda",false);
-        Predmet autoCitroen= new Predmet("autoCitroen",false);
-        Predmet kosik= new Predmet("kosik",false);
-        Predmet letaky= new Predmet("letaky",true);
-        Predmet kalendar = new Predmet("kalendar",true);
-        Predmet cokolada = new Predmet("cokolada",true);
-        Predmet kava = new Predmet("kava",true);
-        Predmet jablko = new Predmet("jablko",true);
-        Predmet mrkev = new Predmet("mrkev",true);
-        Predmet celer = new Predmet("celer",true);
-        Predmet cocka = new Predmet("cocka",true);
-        Predmet hladkaMouka= new Predmet("hladkaMouka",true);
-        Predmet hrubaMouka= new Predmet("hrubaMouka",true);
-        Predmet ryze= new Predmet("ryze",true);
-        Predmet chilli= new Predmet("chilli",true);
-        Predmet sul = new Predmet("sul",true);
-        Predmet koreniBrambory= new Predmet("koreniAmerickeBrambory",true);
-        Predmet matonni= new Predmet("Mattonni",true);
-        Predmet cocacola= new Predmet("Cocacola",true);
-        Predmet kureciStehna = new Predmet("kureciStehna",true);
-        Predmet vejce = new Predmet("vejce",true);
-        Predmet hranolky = new Predmet("hranolky",true);
-        Predmet mleko = new Predmet("mleko",true);
-        Predmet maslo = new Predmet("maslo",true);
-        Predmet pokladna = new Predmet("pokladna",false);
-        Predmet cigarety = new Predmet("cigarety",true);
-        Predmet prodavacka = new Predmet("prodavacka",false);
+        Predmet hrnec = new Predmet("hrnec",false,"hrnec.jpg");
+        Predmet sporak = new Predmet("sporak",false,"sporak.jpg");
+        Predmet klice = new Predmet("klice",true,"klice.jpg");
+        Predmet penezenka = new Predmet("penezenka",true,"penezenka.jpg");
+        Predmet postel = new Predmet("postel",false,"postel.jpg");
+        Predmet gauc = new Predmet("gauc",false,"gauc.jpg");
+        Predmet televize = new Predmet("televize",false,"televize.jpg");
+        Predmet pneumatika = new Predmet("pneumatika",false,"pneumatika.jpg");
+        Predmet autoHonda= new Predmet("autoHonda",false,"autoHonda.jpg");
+        Predmet autoCitroen= new Predmet("autoCitroen",false,"autoCitroen.jpg");
+        Predmet kosik= new Predmet("kosik",false,"kosik.jpg");
+        Predmet letaky= new Predmet("letaky",true,"letaky.jpg");
+        Predmet kalendar = new Predmet("kalendar",true,"kalendar.jpg");
+        Predmet cokolada = new Predmet("cokolada",true,"cokolada.jpg");
+        Predmet kava = new Predmet("kava",true,"kava.jpg");
+        Predmet jablko = new Predmet("jablko",true,"jablko.jpg");
+        Predmet mrkev = new Predmet("mrkev",true,"mrkev.jpg");
+        Predmet celer = new Predmet("celer",true,"celer.jpg");
+        Predmet cocka = new Predmet("cocka",true,"cocka.jpg");
+        Predmet hladkaMouka= new Predmet("hladkaMouka",true,"hladkaMouka.jpg");
+        Predmet hrubaMouka= new Predmet("hrubaMouka",true,"hrubaMouka.jpg");
+        Predmet ryze= new Predmet("ryze",true,"ryze.jpg");
+        Predmet chilli= new Predmet("chilli",true,"chilli.jpg");
+        Predmet sul = new Predmet("sul",true,"sul.jpg");
+        Predmet koreniBrambory= new Predmet("koreniAmerickeBrambory",true,"koreniBrambory.jpg");
+        Predmet matonni= new Predmet("Mattoni",true,"mattoni.jpg");
+        Predmet cocacola= new Predmet("Cocacola",true,"cocacola.jpg");
+        Predmet kureciStehna = new Predmet("kureciStehna",true,"kureciStehna.jpg");
+        Predmet vejce = new Predmet("vejce",true,"vejce.jpg");
+        Predmet hranolky = new Predmet("hranolky",true,"hranolky.jpg");
+        Predmet mleko = new Predmet("mleko",true,"mleko.jpg");
+        Predmet maslo = new Predmet("maslo",true,"maslo.jpg");
+        Predmet pokladna = new Predmet("pokladna",false,"pokladna.jpg");
+        Predmet cigarety = new Predmet("cigarety",true,"cigarety.jpg");
+        Predmet prodavacka = new Predmet("prodavacka",false,"prodavacka.jpg");
         
         kuchyne.setPredmet(hrnec,sporak,klice,penezenka);
         loznice.setPredmet(postel);
@@ -203,5 +203,10 @@ public class HerniPlan extends Observable {
         this.zaplaceno = zaplaceno;
     }
     
+    @Override
+    public void notifyObservers(){
+        setChanged();
+        super.notifyObservers();
+    }
 
 }
