@@ -1,11 +1,8 @@
 package com.github.goalman96.adventura.ui;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -14,8 +11,6 @@ import com.github.goalman96.adventura.logika.Prostor;
 import com.github.goalman96.adventura.logika.Predmet;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -40,7 +35,7 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private TextArea vystup;
 	@FXML private ListView<Predmet> seznamVeciMistnost;
 	@FXML private ListView<Prostor> seznamVychodu;
-        @FXML private ListView<Object> seznamVeciBatoh;
+    @FXML private ListView<Object> seznamVeciBatoh;
 	@FXML private ImageView uzivatel;
 	
         
@@ -82,7 +77,11 @@ public class HomeController extends GridPane implements Observer {
 		hra.getHerniPlan().addObserver(this);
                 hra.getHerniPlan().notifyObservers();
 	}
-        
+	
+	/**
+	 * Metoda spustí novou hru
+	 * zavolá metodu notifyObservers, aby uvědomila objekty 
+	 */
         @FXML public void novaHra() 
         {
                 hra = new Hra();
@@ -92,12 +91,19 @@ public class HomeController extends GridPane implements Observer {
                 hra.getHerniPlan().notifyObservers();
         }
         
+        /**
+    	 * Metoda ukončí hru
+    	 */ 
         @FXML public void konecHry() 
         {
             vstupniText.setText("konec");
             odesliPrikaz();
         }
         
+        /**
+    	 * Metoda zobrazí nápovědu uloženou v html souboru pomocí webview
+    	 * nápovědu zobrazí v novém okně
+    	 */
          @FXML public void Napoveda() 
         {
             Stage stage = new Stage();
@@ -110,7 +116,12 @@ public class HomeController extends GridPane implements Observer {
             stage.show();
         }
         
-
+         /**
+     	 * Metoda slouží k aktualiozování aktuální místnsoti, posunu panáčka na mapě
+     	 * metoda se volá vždy když je pozorovaný objekt změněn zavolá notifyObservers metodu
+     	 * @param arg0 pozorovaný objekt
+     	 * @param arg1 argument pro notifyObservers meotdu
+     	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		seznamVeciMistnost.getItems().clear();

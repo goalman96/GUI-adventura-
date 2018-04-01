@@ -53,18 +53,18 @@ public class HerniPlan extends Observable {
         // vytvářejí se jednotlivé prostory
         kuchyne = new Prostor("kuchyne","kuchyně, kde si uvaříš večeři",30,80);
         loznice = new Prostor("loznice", "ložnice, kde asi spíš",30,10);
-        obyvak = new Prostor("obyvak","obývák, máš tu bordel",110,10);
-        garaz = new Prostor("garaz","garáž, kde máš auto",0,0);
-        Prostor auto = new Prostor("auto","auto, kterým můžeš jet do Tesca",0,0);
-        parkoviste = new Prostor("parkoviste","parkoviště u Tesca",0,0);
-        vchod = new Prostor("vchod","vchod do Tesca",0,0);
-        pokladny = new Prostor("pokladny","pokladny, kde musíš zaplatit nákup",0,0);
-        akcniZbozi = new Prostor("akcniZbozi","akční zboží,kde je zboží v akci",0,0);
-        ovoceZelenina = new Prostor("ovoceZelenina","ovoce a zelenina, je to zdravé, takže to nechceš",0,0);
-        lusteniny = new Prostor("lusteniny","luštěniny... někdo to jí",0,0);
-        koreni = new Prostor("koreni","koření, kterým si můžeš okořenit jídlo",0,0);
-        piti = new Prostor("piti","pití, kde jsou minerálky, limonády, piva, vodky a tak",0,0);
-        chlazeneZbozi= new Prostor("chlazeneZbozi","chlazené zboží, které je stejné jako ostatní, akorát je chlazené...",0,0);
+        obyvak = new Prostor("obyvak","obývák, máš tu bordel",125,10);
+        garaz = new Prostor("garaz","garáž, kde máš auto",80,80);
+        Prostor auto = new Prostor("auto","auto, kterým můžeš jet do Tesca",108,80);
+        parkoviste = new Prostor("parkoviste","parkoviště u Tesca",125,321);
+        vchod = new Prostor("vchod","vchod do Tesca",148,270);
+        pokladny = new Prostor("pokladny","pokladny, kde musíš zaplatit nákup",74,270);
+        akcniZbozi = new Prostor("akcniZbozi","akční zboží,kde je zboží v akci",117,224);
+        ovoceZelenina = new Prostor("ovoceZelenina","ovoce a zelenina, je to zdravé, takže to nechceš",151,203);
+        lusteniny = new Prostor("lusteniny","luštěniny... někdo to jí",108,204);
+        koreni = new Prostor("koreni","koření, kterým si můžeš okořenit jídlo",63,204);
+        piti = new Prostor("piti","pití, kde jsou minerálky, limonády, piva, vodky a tak",25,203);
+        chlazeneZbozi= new Prostor("chlazeneZbozi","chlazené zboží, které je stejné jako ostatní, akorát je chlazené...",125,159);
         
         kuchyne.setVychod(loznice, garaz);
         loznice.setVychod(kuchyne, obyvak);
@@ -158,7 +158,7 @@ public class HerniPlan extends Observable {
     
     /**
      *  Metoda nastaví aktuální prostor, používá se nejčastěji při přechodu mezi prostory
-     *
+     * a uvědomí o změně pozorovaných objektů
      *@param  prostor nový aktuální prostor
      */
     public void setAktualniProstor(Prostor prostor) {
@@ -203,6 +203,9 @@ public class HerniPlan extends Observable {
         this.zaplaceno = zaplaceno;
     }
     
+    /**
+     *  Metoda ovědomí objekty o změně pozorovaných objektů
+     */
     @Override
     public void notifyObservers(){
         setChanged();

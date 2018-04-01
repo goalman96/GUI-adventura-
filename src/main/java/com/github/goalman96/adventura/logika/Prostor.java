@@ -271,6 +271,10 @@ public class Prostor {
 		this.y = y;
 	}
 	
+	/**
+	 * Metoda vrátí název prostoru
+	 * @return název prostoru
+	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
