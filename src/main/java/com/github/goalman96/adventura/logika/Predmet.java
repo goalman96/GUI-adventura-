@@ -18,6 +18,7 @@ public class Predmet
     //== Datové atributy (statické i instancí)======================================
     private String nazev;
     private boolean prenositelnost;
+    private String obrazek;
     //== Konstruktory a tovární metody =============================================
 
     /**
@@ -27,10 +28,11 @@ public class Predmet
      * 
      * @param přenositelnost.
      */
-    public Predmet(String nazev, boolean prenositelnost)
+    public Predmet(String nazev, boolean prenositelnost,String obrazek)
     {
         this.nazev = nazev;
         this.prenositelnost = prenositelnost;
+        this.obrazek = obrazek;
     }
 
     /**
@@ -53,7 +55,19 @@ public class Predmet
         return prenositelnost;
     }
     
+    @Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getNazev();
+	}
+        
+        
+    
 
     //== Soukromé metody (instancí i třídy) ========================================
+
+    public String getObrazek() {
+        return obrazek;
+    }
 
 }

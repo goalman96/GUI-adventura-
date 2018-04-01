@@ -9,11 +9,12 @@ import com.github.goalman96.adventura.logika.IHra;
  *  Toto je uživatelského rozhraní aplikace Adventura
  *  Tato třída vytváří instanci třídy Hra, která představuje logiku aplikace.
  *  Čte vstup zadaný uživatelem a předává tento řetězec logice a vypisuje odpověď logiky na konzoli.
- *  
+ *  Pokud chcete hrát tuto hru, vytvořte instanci této třídy
+ *  a poté na ní vyvolejte metodu "hraj". 
  *  
  *
- *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Tibor Vondrášek
- *@version    29.12.2017
+ *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
+ *@version    pro školní rok 2014/2015
  */
 
 public class TextoveRozhrani {

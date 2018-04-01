@@ -26,7 +26,7 @@ public class Start
     {
         
         IHra hra = new Hra();
-        TextoveRozhrani rozhrani = new TextoveRozhrani(hra);
-        rozhrani.hraj();
+        TextoveRozhrani ui = new TextoveRozhrani(hra);
+        ui.hraj();
     }
 }

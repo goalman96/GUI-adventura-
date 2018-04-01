@@ -59,7 +59,7 @@ public class PrikazUvar implements IPrikaz {
                     +"Napiš 'restart' pro novou hru nebo 'konec' pro ukončení hry\n";
                 }
             else {
-                Predmet palacinky = new Predmet("palacinky",true);
+                Predmet palacinky = new Predmet("palacinky",true,"palacinky.jpg");
                 aktualniProstor.pridejPredmet(palacinky);
                 batoh.vyhodPredmet(vejce);
                 batoh.vyhodPredmet(mleko);
